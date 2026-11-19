@@ -43,7 +43,7 @@ type Task = {
   deadline: string;
 };
 
-const base_url = "https://backend-brightsync-1.onrender.com";
+const base_url = "https://backend-brightsync-93yn.onrender.com";
 
 export const Route = createFileRoute("/_pages/$userId")({
   beforeLoad: () => {
