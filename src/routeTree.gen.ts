@@ -10,18 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as PagesSignupRouteImport } from './routes/_pages/signup'
-import { Route as PagesSigninRouteImport } from './routes/_pages/signin'
 import { Route as PagesUserIdRouteImport } from './routes/_pages/$userId'
+import { Route as PagesSigninRouteImport } from './routes/_pages/signin'
+import { Route as PagesSignupRouteImport } from './routes/_pages/signup'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PagesSignupRoute = PagesSignupRouteImport.update({
-  id: '/_pages/signup',
-  path: '/signup',
+const PagesUserIdRoute = PagesUserIdRouteImport.update({
+  id: '/_pages/$userId',
+  path: '/$userId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PagesSigninRoute = PagesSigninRouteImport.update({
@@ -29,9 +29,9 @@ const PagesSigninRoute = PagesSigninRouteImport.update({
   path: '/signin',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PagesUserIdRoute = PagesUserIdRouteImport.update({
-  id: '/_pages/$userId',
-  path: '/$userId',
+const PagesSignupRoute = PagesSignupRouteImport.update({
+  id: '/_pages/signup',
+  path: '/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -78,11 +78,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_pages/signup': {
-      id: '/_pages/signup'
-      path: '/signup'
-      fullPath: '/signup'
-      preLoaderRoute: typeof PagesSignupRouteImport
+    '/_pages/$userId': {
+      id: '/_pages/$userId'
+      path: '/$userId'
+      fullPath: '/$userId'
+      preLoaderRoute: typeof PagesUserIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_pages/signin': {
@@ -92,11 +92,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagesSigninRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_pages/$userId': {
-      id: '/_pages/$userId'
-      path: '/$userId'
-      fullPath: '/$userId'
-      preLoaderRoute: typeof PagesUserIdRouteImport
+    '/_pages/signup': {
+      id: '/_pages/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof PagesSignupRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
